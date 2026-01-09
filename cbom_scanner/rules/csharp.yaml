@@ -1,0 +1,26 @@
+{
+  "language": "csharp",
+  "imports": [
+    "System.Security.Cryptography"
+  ],
+  "calls": [
+    {
+      "id": "cs-aes-create",
+      "call": "Aes.Create",
+      "api": "System.Security.Cryptography.Aes.Create",
+      "library": "System.Security.Cryptography",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "algorithm": "AES"
+    },
+    {
+      "id": "cs-sha256-create",
+      "call": "SHA256.Create",
+      "api": "System.Security.Cryptography.SHA256.Create",
+      "library": "System.Security.Cryptography",
+      "asset_type": "HASH",
+      "confidence": "MED",
+      "algorithm": "SHA-256"
+    }
+  ]
+}

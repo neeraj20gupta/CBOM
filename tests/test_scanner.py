@@ -1,22 +1,15 @@
-import importlib.util
 from pathlib import Path
+import sys
 
 import pytest
 
-
-DEPS_AVAILABLE = True
-if importlib.util.find_spec("tree_sitter") is None or importlib.util.find_spec(
-    "tree_sitter_languages"
-) is None:
-    DEPS_AVAILABLE = False
-if importlib.util.find_spec("yaml") is None:
-    DEPS_AVAILABLE = False
+ROOT = Path(__file__).parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 
 @pytest.fixture()
 def orchestrator(tmp_path):
-    if not DEPS_AVAILABLE:
-        pytest.skip("dependencies not installed", allow_module_level=False)
     from cbom_scanner.core.orchestrator import Orchestrator
     from cbom_scanner.scanners import (
         CScanner,
@@ -28,7 +21,7 @@ def orchestrator(tmp_path):
         RustScanner,
     )
 
-    rules_dir = Path(__file__).parents[1] / "src" / "cbom_scanner" / "rules"
+    rules_dir = Path(__file__).parents[1] / "cbom_scanner" / "rules"
     return Orchestrator(
         [
             NodeScanner(rules_dir / "node.yaml"),
