@@ -1,0 +1,28 @@
+{
+  "language": "c",
+  "imports": [
+    "openssl/evp.h"
+  ],
+  "calls": [
+    {
+      "id": "c-evp-aes-256-gcm",
+      "call": "EVP_aes_256_gcm",
+      "api": "EVP_aes_256_gcm",
+      "library": "openssl",
+      "asset_type": "SYMMETRIC",
+      "confidence": "HIGH",
+      "algorithm": "AES",
+      "mode": "GCM",
+      "key_size_bits": "256"
+    },
+    {
+      "id": "c-evp-sha256",
+      "call": "EVP_sha256",
+      "api": "EVP_sha256",
+      "library": "openssl",
+      "asset_type": "HASH",
+      "confidence": "HIGH",
+      "algorithm": "SHA-256"
+    }
+  ]
+}

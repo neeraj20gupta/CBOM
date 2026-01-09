@@ -33,7 +33,11 @@ def scan_tree_sitter(
     findings: List[RawFinding] = []
     for path in files:
         source_text = path.read_text(encoding="utf-8", errors="replace")
-        for call_site in collect_call_sites(source_text, language_name):
+        try:
+            call_sites = list(collect_call_sites(source_text, language_name))
+        except RuntimeError:
+            return scan_regex(files, rule_set, language_name)
+        for call_site in call_sites:
             for rule in rule_set.calls:
                 if not _match_call(rule, call_site):
                     continue

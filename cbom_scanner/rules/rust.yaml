@@ -1,0 +1,29 @@
+{
+  "language": "rust",
+  "imports": [
+    "aes",
+    "sha2"
+  ],
+  "calls": [
+    {
+      "id": "rust-aes256gcm-new",
+      "call": "Aes256Gcm::new",
+      "api": "aes_gcm::Aes256Gcm::new",
+      "library": "aes-gcm",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "algorithm": "AES",
+      "mode": "GCM",
+      "key_size_bits": "256"
+    },
+    {
+      "id": "rust-sha256-new",
+      "call": "Sha256::new",
+      "api": "sha2::Sha256::new",
+      "library": "sha2",
+      "asset_type": "HASH",
+      "confidence": "MED",
+      "algorithm": "SHA-256"
+    }
+  ]
+}

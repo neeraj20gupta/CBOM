@@ -1,0 +1,31 @@
+{
+  "language": "java",
+  "imports": [
+    "javax.crypto.Cipher",
+    "java.security.MessageDigest"
+  ],
+  "calls": [
+    {
+      "id": "java-cipher-getinstance",
+      "call": "Cipher.getInstance",
+      "api": "javax.crypto.Cipher.getInstance",
+      "library": "javax.crypto",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "java-message-digest",
+      "call": "MessageDigest.getInstance",
+      "api": "java.security.MessageDigest.getInstance",
+      "library": "java.security",
+      "asset_type": "HASH",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    }
+  ]
+}

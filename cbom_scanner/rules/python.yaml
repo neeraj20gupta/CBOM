@@ -1,0 +1,30 @@
+{
+  "language": "python",
+  "imports": [
+    "hashlib",
+    "cryptography.hazmat.primitives.ciphers"
+  ],
+  "calls": [
+    {
+      "id": "py-hashlib-sha256",
+      "call": "sha256",
+      "api": "hashlib.sha256",
+      "library": "hashlib",
+      "asset_type": "HASH",
+      "confidence": "MED",
+      "algorithm": "SHA-256"
+    },
+    {
+      "id": "py-cipher-operations",
+      "call": "Cipher",
+      "api": "cryptography.hazmat.primitives.ciphers.Cipher",
+      "library": "cryptography",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0,
+        "mode": 1
+      }
+    }
+  ]
+}

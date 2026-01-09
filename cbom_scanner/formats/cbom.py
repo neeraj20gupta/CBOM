@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable, List
+from typing import Iterable, List, Optional
 
 from cbom_scanner import __version__
 from cbom_scanner.core.models import CryptoFinding
@@ -43,6 +43,10 @@ def build_cbom(component: str, findings: Iterable[CryptoFinding]) -> dict:
     }
 
 
-def write_cbom(path: Path, component: str, findings: List[CryptoFinding]) -> None:
+def write_cbom(path: Optional[Path], component: str, findings: List[CryptoFinding]) -> None:
     payload = build_cbom(component, findings)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    output = json.dumps(payload, indent=2, sort_keys=True)
+    if path is None or str(path) == "-":
+        print(output)
+        return
+    path.write_text(output)

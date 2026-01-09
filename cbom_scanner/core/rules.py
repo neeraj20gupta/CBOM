@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
-
-import yaml
 
 
 @dataclass(frozen=True)
@@ -40,7 +39,7 @@ def _as_int(value: Any) -> Optional[int]:
 
 
 def load_rules(rule_path: Path) -> RuleSet:
-    data = yaml.safe_load(rule_path.read_text())
+    data = json.loads(rule_path.read_text())
     language = data.get("language", rule_path.stem)
     imports = list(data.get("imports", []))
     calls: List[CallRule] = []

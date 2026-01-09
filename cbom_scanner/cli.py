@@ -40,7 +40,7 @@ def _scan_repo(args: argparse.Namespace) -> int:
     options = ScanOptions(include_ts=args.include_ts)
     findings = orchestrator.scan(repo_path, options)
     component = repo_path.name
-    out_path = Path(args.out)
+    out_path = Path(args.out) if args.out is not None else None
     if args.format == "cbom":
         write_cbom(out_path, component, findings)
     else:
@@ -54,7 +54,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     scan = sub.add_parser("scan", help="Scan a repository for crypto usage")
     scan.add_argument("repo", help="Path to repository")
-    scan.add_argument("--out", required=True, help="Output JSON path")
+    scan.add_argument(
+        "--out",
+        default="-",
+        help="Output JSON path (use '-' for stdout)",
+    )
     scan.add_argument(
         "--format",
         choices=["cbom", "cyclonedx"],
