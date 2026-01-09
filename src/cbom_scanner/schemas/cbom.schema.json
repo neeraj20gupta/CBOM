@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CBOM",
+  "type": "object",
+  "required": ["cbomVersion", "generatedAt", "component", "tool", "cryptoAssets"],
+  "properties": {
+    "cbomVersion": {"type": "string"},
+    "generatedAt": {"type": "string"},
+    "component": {"type": "string"},
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"}
+      }
+    },
+    "cryptoAssets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "assetType",
+          "algorithm",
+          "mode",
+          "keySizeBits",
+          "library",
+          "api",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "assetType": {"type": "string"},
+          "algorithm": {"type": "string"},
+          "mode": {"type": "string"},
+          "keySizeBits": {"type": "string"},
+          "library": {"type": "string"},
+          "api": {"type": "string"},
+          "confidence": {"type": "string"},
+          "evidence": {
+            "type": "object",
+            "required": ["file", "line", "column", "snippet"],
+            "properties": {
+              "file": {"type": "string"},
+              "line": {"type": "integer"},
+              "column": {"type": "integer"},
+              "function": {"type": ["string", "null"]},
+              "snippet": {"type": "string"}
+            }
+          },
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

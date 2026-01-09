@@ -1,0 +1,20 @@
+language: node
+imports:
+  - crypto
+calls:
+  - id: node-crypto-createcipheriv
+    call: createCipheriv
+    api: crypto.createCipheriv
+    library: node:crypto
+    asset_type: SYMMETRIC
+    confidence: HIGH
+    arg_indexes:
+      algorithm: 0
+  - id: node-crypto-createhash
+    call: createHash
+    api: crypto.createHash
+    library: node:crypto
+    asset_type: HASH
+    confidence: HIGH
+    arg_indexes:
+      algorithm: 0

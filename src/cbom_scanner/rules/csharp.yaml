@@ -1,0 +1,10 @@
+language: csharp
+imports:
+  - System.Security.Cryptography
+calls:
+  - id: csharp-aes-create
+    call: Aes.Create
+    api: System.Security.Cryptography.Aes.Create
+    library: System.Security.Cryptography
+    asset_type: SYMMETRIC
+    confidence: MED

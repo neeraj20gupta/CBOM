@@ -1,0 +1,11 @@
+language: c
+imports:
+  - openssl/evp.h
+calls:
+  - id: c-openssl-evp-aes-256-gcm
+    call: EVP_aes_256_gcm
+    api: EVP_aes_256_gcm
+    library: OpenSSL
+    asset_type: SYMMETRIC
+    confidence: HIGH
+    algorithm: AES-256-GCM

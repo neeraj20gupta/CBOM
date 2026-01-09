@@ -1,0 +1,18 @@
+language: python
+imports:
+  - hashlib
+  - cryptography
+calls:
+  - id: py-hashlib-sha256
+    call: hashlib.sha256
+    api: hashlib.sha256
+    library: hashlib
+    asset_type: HASH
+    confidence: HIGH
+    algorithm: sha256
+  - id: py-cryptography-cipher
+    call: Cipher
+    api: cryptography.hazmat.primitives.ciphers.Cipher
+    library: cryptography
+    asset_type: SYMMETRIC
+    confidence: MED

@@ -1,0 +1,5 @@
+pyyaml
+
+tree-sitter
+tree-sitter-languages
+pytest

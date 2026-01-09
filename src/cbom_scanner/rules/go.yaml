@@ -1,0 +1,19 @@
+language: go
+imports:
+  - crypto/aes
+  - crypto/cipher
+calls:
+  - id: go-aes-newcipher
+    call: aes.NewCipher
+    api: crypto/aes.NewCipher
+    library: crypto/aes
+    asset_type: SYMMETRIC
+    confidence: HIGH
+    algorithm: AES
+  - id: go-cipher-newgcm
+    call: cipher.NewGCM
+    api: crypto/cipher.NewGCM
+    library: crypto/cipher
+    asset_type: SYMMETRIC
+    confidence: MED
+    mode: GCM

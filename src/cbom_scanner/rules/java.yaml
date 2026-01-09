@@ -1,0 +1,10 @@
+language: java
+imports:
+  - javax.crypto
+calls:
+  - id: java-cipher-getinstance
+    call: Cipher.getInstance
+    api: javax.crypto.Cipher.getInstance
+    library: javax.crypto
+    asset_type: SYMMETRIC
+    confidence: MED
