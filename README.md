@@ -187,3 +187,15 @@ No linting or formatting tools are currently configured in this repository.
 No `LICENSE` file is present in this repository. If you intend to open source or redistribute, please add an explicit license.
 
 Contributions are welcome—please open an issue or pull request with a clear description of changes.
+
+## Public Repo Test Report
+
+**Repos scanned**
+- https://github.com/auth0/node-jsonwebtoken
+- https://github.com/golang/crypto
+- https://github.com/curl/curl
+
+**Summary (CBOM output)**
+- `node-jsonwebtoken` (JavaScript): 0 crypto assets detected.
+- `golang/crypto` (Go): 17 crypto assets detected; top algorithms include AES (15) and UNKNOWN (2); modes include GCM (2) and UNKNOWN (15).
+- `curl` (C/OpenSSL): 3 crypto assets detected; top algorithm SHA-256 (3); modes UNKNOWN (3).

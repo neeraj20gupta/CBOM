@@ -66,10 +66,9 @@ def _find_function_context(node: "Node") -> Optional[str]:
         return None
     current = node
     while current is not None:
-        if "name" in current.field_names:
-            name_node = current.child_by_field_name("name")
-            if name_node is not None:
-                return name_node.text.decode("utf-8", errors="replace")
+        name_node = current.child_by_field_name("name")
+        if name_node is not None:
+            return name_node.text.decode("utf-8", errors="replace")
         current = current.parent
     return None
 
@@ -81,7 +80,11 @@ def collect_call_sites(
 ) -> Iterator[CallSite]:
     ts_module, _ = _load_tree_sitter()
     parser = ts_module.Parser()
-    parser.set_language(_get_language(language_name))
+    language = _get_language(language_name)
+    if hasattr(parser, "set_language"):
+        parser.set_language(language)
+    else:
+        parser.language = language
     source = source_text.encode("utf-8")
     tree = parser.parse(source)
     root = tree.root_node
