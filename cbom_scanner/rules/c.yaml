@@ -1,7 +1,9 @@
 {
   "language": "c",
   "imports": [
-    "openssl/evp.h"
+    "openssl/evp.h",
+    "openssl/rsa.h",
+    "openssl/ec.h"
   ],
   "calls": [
     {
@@ -23,6 +25,74 @@
       "asset_type": "HASH",
       "confidence": "HIGH",
       "algorithm": "SHA-256"
+    },
+    {
+      "id": "c-evp-get-cipherbyname",
+      "call": "EVP_get_cipherbyname",
+      "api": "EVP_get_cipherbyname",
+      "library": "openssl",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "c-evp-cipher-fetch",
+      "call": "EVP_CIPHER_fetch",
+      "api": "EVP_CIPHER_fetch",
+      "library": "openssl",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 1
+      }
+    },
+    {
+      "id": "c-evp-encryptinit-ex",
+      "call": "EVP_EncryptInit_ex",
+      "api": "EVP_EncryptInit_ex",
+      "library": "openssl",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 1
+      }
+    },
+    {
+      "id": "c-evp-decryptinit-ex",
+      "call": "EVP_DecryptInit_ex",
+      "api": "EVP_DecryptInit_ex",
+      "library": "openssl",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 1
+      }
+    },
+    {
+      "id": "c-rsa-generate-key",
+      "call": "RSA_generate_key_ex",
+      "api": "RSA_generate_key_ex",
+      "library": "openssl",
+      "asset_type": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "algorithm": "RSA",
+      "arg_indexes": {
+        "key_size_bits": 1
+      }
+    },
+    {
+      "id": "c-ec-key-new-curve",
+      "call": "EC_KEY_new_by_curve_name",
+      "api": "EC_KEY_new_by_curve_name",
+      "library": "openssl",
+      "asset_type": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "algorithm": "ECDSA",
+      "arg_indexes": {
+        "key_size_bits": 0
+      }
     }
   ]
 }

@@ -1,0 +1,110 @@
+{
+  "cbomVersion": "1.0",
+  "generatedAt": "2025-01-01T00:00:00Z",
+  "component": "sample-service",
+  "tool": { "name": "cbom-scanner", "version": "0.1.0" },
+  "cryptoAssets": [
+    {
+      "id": "asset-1",
+      "assetType": "SYMMETRIC",
+      "algorithm": "AES",
+      "mode": "GCM",
+      "keySizeBits": "256",
+      "library": "node:crypto",
+      "api": "crypto.createCipheriv",
+      "confidence": "HIGH",
+      "evidence": {
+        "file": "src/encrypt.js",
+        "line": 12,
+        "column": 8,
+        "function": "encrypt",
+        "snippet": "crypto.createCipheriv('aes-256-gcm', key, iv)"
+      }
+    },
+    {
+      "id": "asset-2",
+      "assetType": "HASH",
+      "algorithm": "SHA-256",
+      "mode": "UNKNOWN",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "api": "crypto.createHash",
+      "confidence": "HIGH",
+      "evidence": {
+        "file": "src/hash.js",
+        "line": 6,
+        "column": 4,
+        "function": "hashPayload",
+        "snippet": "crypto.createHash('sha256')"
+      }
+    },
+    {
+      "id": "asset-3",
+      "assetType": "KDF",
+      "algorithm": "PBKDF2",
+      "mode": "UNKNOWN",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "api": "crypto.pbkdf2",
+      "confidence": "HIGH",
+      "evidence": {
+        "file": "src/kdf.js",
+        "line": 20,
+        "column": 2,
+        "function": "deriveKey",
+        "snippet": "crypto.pbkdf2(secret, salt, 10000, 32, 'sha256')"
+      }
+    },
+    {
+      "id": "asset-4",
+      "assetType": "SIGNATURE",
+      "algorithm": "RSA",
+      "mode": "SHA-256",
+      "keySizeBits": "2048",
+      "library": "node:crypto",
+      "api": "crypto.sign",
+      "confidence": "HIGH",
+      "evidence": {
+        "file": "src/sign.js",
+        "line": 44,
+        "column": 3,
+        "function": "signPayload",
+        "snippet": "crypto.sign('RSA-SHA256', data, key)"
+      }
+    },
+    {
+      "id": "asset-5",
+      "assetType": "PROTOCOL",
+      "algorithm": "TLS",
+      "mode": "UNKNOWN",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/tls",
+      "api": "tls.Dial",
+      "confidence": "MED",
+      "evidence": {
+        "file": "tls/client.go",
+        "line": 18,
+        "column": 1,
+        "function": "connect",
+        "snippet": "tls.Dial(\"tcp\", \"example.com:443\", cfg)"
+      }
+    },
+    {
+      "id": "asset-6",
+      "assetType": "AEAD",
+      "algorithm": "CHACHA20",
+      "mode": "POLY1305",
+      "keySizeBits": "256",
+      "library": "golang.org/x/crypto/chacha20poly1305",
+      "api": "chacha20poly1305.New",
+      "confidence": "HIGH",
+      "evidence": {
+        "file": "crypto/stream.go",
+        "line": 88,
+        "column": 5,
+        "function": "newAEAD",
+        "snippet": "chacha20poly1305.New(key)"
+      }
+    }
+  ]
+}
