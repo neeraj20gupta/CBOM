@@ -29,12 +29,17 @@ def scan_tree_sitter(
     files: Iterable[Path],
     rule_set: RuleSet,
     language_name: str,
+    call_node_type: str = "call_expression",
 ) -> List[RawFinding]:
     findings: List[RawFinding] = []
     for path in files:
         source_text = path.read_text(encoding="utf-8", errors="replace")
         try:
-            call_sites = list(collect_call_sites(source_text, language_name))
+            call_sites = list(
+                collect_call_sites(
+                    source_text, language_name, call_node_type=call_node_type
+                )
+            )
         except RuntimeError:
             return scan_regex(files, rule_set, language_name)
         for call_site in call_sites:

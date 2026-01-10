@@ -25,6 +25,171 @@
       "arg_indexes": {
         "algorithm": 0
       }
+    },
+    {
+      "id": "node-crypto-pbkdf2",
+      "call": "pbkdf2",
+      "api": "crypto.pbkdf2",
+      "library": "node:crypto",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "PBKDF2"
+    },
+    {
+      "id": "node-crypto-pbkdf2sync",
+      "call": "pbkdf2Sync",
+      "api": "crypto.pbkdf2Sync",
+      "library": "node:crypto",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "PBKDF2"
+    },
+    {
+      "id": "node-crypto-scrypt",
+      "call": "scrypt",
+      "api": "crypto.scrypt",
+      "library": "node:crypto",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "SCRYPT"
+    },
+    {
+      "id": "node-crypto-scryptsync",
+      "call": "scryptSync",
+      "api": "crypto.scryptSync",
+      "library": "node:crypto",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "SCRYPT"
+    },
+    {
+      "id": "node-crypto-hkdf",
+      "call": "hkdf",
+      "api": "crypto.hkdf",
+      "library": "node:crypto",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "HKDF"
+    },
+    {
+      "id": "node-crypto-createpublickey",
+      "call": "createPublicKey",
+      "api": "crypto.createPublicKey",
+      "library": "node:crypto",
+      "asset_type": "KEY",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "node-crypto-createprivatekey",
+      "call": "createPrivateKey",
+      "api": "crypto.createPrivateKey",
+      "library": "node:crypto",
+      "asset_type": "KEY",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "node-crypto-createsecretkey",
+      "call": "createSecretKey",
+      "api": "crypto.createSecretKey",
+      "library": "node:crypto",
+      "asset_type": "KEY",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "node-crypto-generatekey",
+      "call": "generateKey",
+      "api": "crypto.generateKey",
+      "library": "node:crypto",
+      "asset_type": "KEYGEN",
+      "confidence": "HIGH",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "node-crypto-diffiehellman",
+      "call": "diffieHellman",
+      "api": "crypto.diffieHellman",
+      "library": "node:crypto",
+      "asset_type": "KEY_EXCHANGE",
+      "confidence": "HIGH",
+      "algorithm": "DIFFIE-HELLMAN"
+    },
+    {
+      "id": "node-crypto-creatediffiehellman",
+      "call": "createDiffieHellman",
+      "api": "crypto.createDiffieHellman",
+      "library": "node:crypto",
+      "asset_type": "KEY_EXCHANGE",
+      "confidence": "HIGH",
+      "algorithm": "DIFFIE-HELLMAN"
+    },
+    {
+      "id": "node-crypto-createecdh",
+      "call": "createECDH",
+      "api": "crypto.createECDH",
+      "library": "node:crypto",
+      "asset_type": "KEY_EXCHANGE",
+      "confidence": "HIGH",
+      "algorithm": "ECDH",
+      "arg_indexes": {
+        "key_size_bits": 0
+      }
+    },
+    {
+      "id": "node-crypto-sign",
+      "call": "sign",
+      "api": "crypto.sign",
+      "library": "node:crypto",
+      "asset_type": "SIGNATURE",
+      "confidence": "HIGH",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "node-crypto-verify",
+      "call": "verify",
+      "api": "crypto.verify",
+      "library": "node:crypto",
+      "asset_type": "SIGNATURE",
+      "confidence": "HIGH",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "node-webcrypto-subtle-digest",
+      "call": "subtle.digest",
+      "api": "crypto.webcrypto.subtle.digest",
+      "library": "node:webcrypto",
+      "asset_type": "HASH",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "node-webcrypto-subtle-sign",
+      "call": "subtle.sign",
+      "api": "crypto.webcrypto.subtle.sign",
+      "library": "node:webcrypto",
+      "asset_type": "SIGNATURE",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
+    },
+    {
+      "id": "node-webcrypto-subtle-verify",
+      "call": "subtle.verify",
+      "api": "crypto.webcrypto.subtle.verify",
+      "library": "node:webcrypto",
+      "asset_type": "SIGNATURE",
+      "confidence": "MED",
+      "arg_indexes": {
+        "algorithm": 0
+      }
     }
   ]
 }

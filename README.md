@@ -178,6 +178,18 @@ Example (abbreviated):
 pytest
 ```
 
+### Dashboard (React)
+
+The dashboard lives in `dashboard/` and renders `/dashboard` with a dark theme, donut charts, and a bubble chart. It accepts CBOM or CycloneDX JSON files via upload, and loads `dashboard/public/sample.json` by default.
+
+```bash
+cd dashboard
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173/dashboard to view the UI.
+
 ### Lint / format
 
 No linting or formatting tools are currently configured in this repository.

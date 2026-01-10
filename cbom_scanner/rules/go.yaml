@@ -2,7 +2,16 @@
   "language": "go",
   "imports": [
     "crypto/aes",
-    "crypto/cipher"
+    "crypto/cipher",
+    "crypto/ecdsa",
+    "crypto/ed25519",
+    "crypto/rsa",
+    "crypto/tls",
+    "golang.org/x/crypto/chacha20poly1305",
+    "golang.org/x/crypto/hkdf",
+    "golang.org/x/crypto/pbkdf2",
+    "golang.org/x/crypto/scrypt",
+    "golang.org/x/crypto/ssh"
   ],
   "calls": [
     {
@@ -22,6 +31,147 @@
       "asset_type": "SYMMETRIC",
       "confidence": "MED",
       "mode": "GCM"
+    },
+    {
+      "id": "go-cipher-newcbcenc",
+      "call": "cipher.NewCBCEncrypter",
+      "api": "crypto/cipher.NewCBCEncrypter",
+      "library": "crypto/cipher",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "mode": "CBC"
+    },
+    {
+      "id": "go-cipher-newcbcdec",
+      "call": "cipher.NewCBCDecrypter",
+      "api": "crypto/cipher.NewCBCDecrypter",
+      "library": "crypto/cipher",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "mode": "CBC"
+    },
+    {
+      "id": "go-cipher-newctr",
+      "call": "cipher.NewCTR",
+      "api": "crypto/cipher.NewCTR",
+      "library": "crypto/cipher",
+      "asset_type": "SYMMETRIC",
+      "confidence": "MED",
+      "mode": "CTR"
+    },
+    {
+      "id": "go-pbkdf2-key",
+      "call": "pbkdf2.Key",
+      "api": "golang.org/x/crypto/pbkdf2.Key",
+      "library": "golang.org/x/crypto/pbkdf2",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "PBKDF2"
+    },
+    {
+      "id": "go-scrypt-key",
+      "call": "scrypt.Key",
+      "api": "golang.org/x/crypto/scrypt.Key",
+      "library": "golang.org/x/crypto/scrypt",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "SCRYPT"
+    },
+    {
+      "id": "go-hkdf-new",
+      "call": "hkdf.New",
+      "api": "golang.org/x/crypto/hkdf.New",
+      "library": "golang.org/x/crypto/hkdf",
+      "asset_type": "KDF",
+      "confidence": "HIGH",
+      "algorithm": "HKDF"
+    },
+    {
+      "id": "go-chacha20poly1305-new",
+      "call": "chacha20poly1305.New",
+      "api": "golang.org/x/crypto/chacha20poly1305.New",
+      "library": "golang.org/x/crypto/chacha20poly1305",
+      "asset_type": "AEAD",
+      "confidence": "HIGH",
+      "algorithm": "CHACHA20-POLY1305"
+    },
+    {
+      "id": "go-chacha20poly1305-newx",
+      "call": "chacha20poly1305.NewX",
+      "api": "golang.org/x/crypto/chacha20poly1305.NewX",
+      "library": "golang.org/x/crypto/chacha20poly1305",
+      "asset_type": "AEAD",
+      "confidence": "HIGH",
+      "algorithm": "CHACHA20-POLY1305"
+    },
+    {
+      "id": "go-ssh-dial",
+      "call": "ssh.Dial",
+      "api": "golang.org/x/crypto/ssh.Dial",
+      "library": "golang.org/x/crypto/ssh",
+      "asset_type": "PROTOCOL",
+      "confidence": "MED",
+      "algorithm": "SSH"
+    },
+    {
+      "id": "go-tls-dial",
+      "call": "tls.Dial",
+      "api": "crypto/tls.Dial",
+      "library": "crypto/tls",
+      "asset_type": "PROTOCOL",
+      "confidence": "MED",
+      "algorithm": "TLS"
+    },
+    {
+      "id": "go-tls-listen",
+      "call": "tls.Listen",
+      "api": "crypto/tls.Listen",
+      "library": "crypto/tls",
+      "asset_type": "PROTOCOL",
+      "confidence": "MED",
+      "algorithm": "TLS"
+    },
+    {
+      "id": "go-tls-loadx509",
+      "call": "tls.LoadX509KeyPair",
+      "api": "crypto/tls.LoadX509KeyPair",
+      "library": "crypto/tls",
+      "asset_type": "CERTIFICATE",
+      "confidence": "MED",
+      "algorithm": "X.509"
+    },
+    {
+      "id": "go-rsa-generatekey",
+      "call": "rsa.GenerateKey",
+      "api": "crypto/rsa.GenerateKey",
+      "library": "crypto/rsa",
+      "asset_type": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "algorithm": "RSA",
+      "arg_indexes": {
+        "key_size_bits": 1
+      }
+    },
+    {
+      "id": "go-ecdsa-generatekey",
+      "call": "ecdsa.GenerateKey",
+      "api": "crypto/ecdsa.GenerateKey",
+      "library": "crypto/ecdsa",
+      "asset_type": "SIGNATURE",
+      "confidence": "HIGH",
+      "algorithm": "ECDSA",
+      "arg_indexes": {
+        "key_size_bits": 0
+      }
+    },
+    {
+      "id": "go-ed25519-generatekey",
+      "call": "ed25519.GenerateKey",
+      "api": "crypto/ed25519.GenerateKey",
+      "library": "crypto/ed25519",
+      "asset_type": "SIGNATURE",
+      "confidence": "HIGH",
+      "algorithm": "ED25519"
     }
   ]
 }

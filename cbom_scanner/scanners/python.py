@@ -22,4 +22,4 @@ class PythonScanner(LanguageScanner):
         return path.suffix == ".py"
 
     def scan(self, files: Iterable[Path]) -> List[RawFinding]:
-        return scan_tree_sitter(files, self.rule_set, "python")
+        return scan_tree_sitter(files, self.rule_set, "python", call_node_type="call")
