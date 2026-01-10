@@ -3,6 +3,7 @@ import DonutCard, { DonutDatum } from './components/DonutCard';
 import BubblePack, { BubbleDatum } from './components/BubblePack';
 import LegendPanel from './components/LegendPanel';
 import FileUploader from './components/FileUploader';
+import RepoAnalyzer from './components/RepoAnalyzer';
 import { DashboardData, parseCbom } from './data/parseCbom';
 
 const COLORS = {
@@ -113,6 +114,8 @@ const DashboardPage = () => {
         </div>
         <FileUploader onFileLoaded={handleFileLoaded} error={error} activeFile={activeFile} />
       </div>
+
+      <RepoAnalyzer />
 
       <div className="card-grid">
         <DonutCard title="Crypto Assets" value={data.totalAssets} data={quantumDonut} />
