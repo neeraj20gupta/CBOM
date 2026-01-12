@@ -1,0 +1,713 @@
+{
+  "cbomVersion": "1.0",
+  "component": "cryptosamples",
+  "cryptoAssets": [
+    {
+      "algorithm": "ALGORITHMS.TRIPLEDES(KEY)",
+      "api": "cryptography.hazmat.primitives.ciphers.Cipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 10,
+        "file": "/workspace/cryptosamples/python/weak/des_weak.py",
+        "function": null,
+        "line": 14,
+        "snippet": "cipher = Cipher(algorithms.TripleDES(key), modes.CBC(iv), backend=default_backend())"
+      },
+      "id": "02338750189d756ecc4c86304e5b308da53f02a7a77bd239afbf56bf6b4aefcc",
+      "keySizeBits": "UNKNOWN",
+      "library": "cryptography",
+      "mode": "MODES.CBC(IV)",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/symmetric/AESGCM.java",
+        "function": null,
+        "line": 9,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"AES/GCM/NoPadding\");"
+      },
+      "id": "04089e5063efaa34a95fe94cd6bc18fd1e3161325ee7c7d450dffba6a2d7b0ba",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "NOPADDING",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto/aes.NewCipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/go/symmetric/aes_128_cbc_strong.go",
+        "function": "main",
+        "line": 21,
+        "snippet": "\tblock, err := aes.NewCipher(key)"
+      },
+      "id": "1343a1d23d1faabfd6398dc9480dbaeb36fcf9bf3ac2a224160930156f5ec6b5",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/aes",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "ARCFOUR",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/weak/RC4Weak.java",
+        "function": null,
+        "line": 18,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"ARCFOUR\");"
+      },
+      "id": "1659dfa796609ec57e06cfb44c5fdcadd556f5de1e35c1b2b5c592f1dcaf0490",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "UNKNOWN",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "RSA",
+      "api": "crypto/rsa.GenerateKey",
+      "assetType": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 21,
+        "file": "/workspace/cryptosamples/go/asymmetric/rsa_1024_weak.go",
+        "function": "main",
+        "line": 15,
+        "snippet": "\tprivateKey, err := rsa.GenerateKey(rand.Reader, 1024)"
+      },
+      "id": "16a9985598aaf6e5900ec647a30a3c004a344cd51e641d7a451b43c055e15064",
+      "keySizeBits": "1024",
+      "library": "crypto/rsa",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "UNKNOWN",
+      "api": "crypto/cipher.NewGCM",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 2,
+        "file": "/workspace/cryptosamples/go/aes_gcm.go",
+        "function": "main",
+        "line": 11,
+        "snippet": "\tcipher.NewGCM(block)"
+      },
+      "id": "19aec7fe4f4686f7175cbbf06a8aeb2dc7d92a9d32b47b72bf352247e349a051",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/cipher",
+      "mode": "GCM",
+      "notes": null
+    },
+    {
+      "algorithm": "SHA-256",
+      "api": "hashlib.sha256",
+      "assetType": "HASH",
+      "confidence": "MED",
+      "evidence": {
+        "column": 15,
+        "file": "/workspace/cryptosamples/python/hash/sha256_strong.py",
+        "function": null,
+        "line": 10,
+        "snippet": "hash_object = hashlib.sha256(data)"
+      },
+      "id": "1f2bd79c2a54736a00df747a6572204459efc067b3d71dd1850412cb7e9c9af1",
+      "keySizeBits": "UNKNOWN",
+      "library": "hashlib",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "MD5",
+      "api": "java.security.MessageDigest.getInstance",
+      "assetType": "HASH",
+      "confidence": "MED",
+      "evidence": {
+        "column": 28,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/hash/MD5Weak.java",
+        "function": null,
+        "line": 14,
+        "snippet": "        MessageDigest md = MessageDigest.getInstance(\"MD5\");"
+      },
+      "id": "208a9db522821cd121e8524cbc64f142cd8e7cb97497afbf8cb9650ec9bb1565",
+      "keySizeBits": "UNKNOWN",
+      "library": "java.security",
+      "mode": "UNKNOWN",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto/aes.NewCipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/go/symmetric/aes_256_gcm_strong.go",
+        "function": "main",
+        "line": 19,
+        "snippet": "\tblock, err := aes.NewCipher(key)"
+      },
+      "id": "20fce6c90881259328d48d180276a37d285675163d7d5c1673295e24528b48a6",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/aes",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 1,
+        "file": "/workspace/cryptosamples/node/aes_ecb.js",
+        "function": null,
+        "line": 5,
+        "snippet": "crypto.createCipheriv('aes-256-ecb', key, null);"
+      },
+      "id": "2b19d8e8444c2af559a9ccece73fb4c387b3a3b668cbc3bc9640fb3364035030",
+      "keySizeBits": "256",
+      "library": "node:crypto",
+      "mode": "ECB",
+      "notes": null
+    },
+    {
+      "algorithm": "UNKNOWN",
+      "api": "crypto/cipher.NewGCM",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 14,
+        "file": "/workspace/cryptosamples/go/symmetric/aes_256_gcm_strong.go",
+        "function": "main",
+        "line": 25,
+        "snippet": "\tgcm, err := cipher.NewGCM(block)"
+      },
+      "id": "2b4512f2029ad831df4a38b36074bf6ab3ef2d51d7fdcd269b2c8f98b6401efd",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/cipher",
+      "mode": "GCM",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto/aes.NewCipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 14,
+        "file": "/workspace/cryptosamples/go/aes_gcm.go",
+        "function": "main",
+        "line": 10,
+        "snippet": "\tblock, _ := aes.NewCipher(key)"
+      },
+      "id": "2e54eaae95a27793e7e52d16270f6c839e836d640fedb3b1c90e77cf322060ab",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/aes",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "ALGORITHMS.AES(KEY)",
+      "api": "cryptography.hazmat.primitives.ciphers.Cipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 10,
+        "file": "/workspace/cryptosamples/python/symmetric/aes_256_ecb_weak.py",
+        "function": null,
+        "line": 13,
+        "snippet": "cipher = Cipher(algorithms.AES(key), modes.ECB(), backend=default_backend())"
+      },
+      "id": "3200dd1460d61a14e2aca930e62ab2f5ea6e702855faf8de4b729bbacef3c0ee",
+      "keySizeBits": "UNKNOWN",
+      "library": "cryptography",
+      "mode": "MODES.ECB()",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto/aes.NewCipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/go/symmetric/aes_256_ecb_weak.go",
+        "function": "main",
+        "line": 34,
+        "snippet": "\tblock, err := aes.NewCipher(key)"
+      },
+      "id": "43fcd4dbec49ce384435d87fa24d25368600887b80b091640c0d881c7d086319",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/aes",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "ALGORITHMS.AES(KEY)",
+      "api": "cryptography.hazmat.primitives.ciphers.Cipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 10,
+        "file": "/workspace/cryptosamples/python/symmetric/aes_128_cbc_strong.py",
+        "function": null,
+        "line": 15,
+        "snippet": "cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())"
+      },
+      "id": "4522d8f08223aa11afbde726534f91de8062138318a318ddc14e9da570bbaac9",
+      "keySizeBits": "UNKNOWN",
+      "library": "cryptography",
+      "mode": "MODES.CBC(IV)",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/symmetric/AES256ECBWeak.java",
+        "function": null,
+        "line": 19,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"AES/ECB/PKCS5Padding\");"
+      },
+      "id": "4d572095357444f3c953125f8e2d4712a7216b897bc29d119686eed577aaf6a8",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "PKCS5PADDING",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "AES",
+      "api": "EVP_EncryptInit_ex",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/symmetric/aes_256_gcm_strong.c",
+        "function": null,
+        "line": 21,
+        "snippet": "    EVP_EncryptInit_ex(ctx, EVP_aes_256_gcm(), NULL, key, iv);"
+      },
+      "id": "51c9d0faca41b9ef8db98ddb0218f3b59103a2c89a7593c7557a240b2ed9fe2b",
+      "keySizeBits": "256",
+      "library": "openssl",
+      "mode": "GCM",
+      "notes": null
+    },
+    {
+      "algorithm": "RSA",
+      "api": "RSA_generate_key_ex",
+      "assetType": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/asymmetric/rsa_1024_weak.c",
+        "function": null,
+        "line": 17,
+        "snippet": "    RSA_generate_key_ex(rsa, 1024, e, NULL);"
+      },
+      "id": "6d2f95c09b5d4e7b7d90bf451341f78b0f57d0a4e67883e1776c741648f00e84",
+      "keySizeBits": "1024",
+      "library": "openssl",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "DES-CBC",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/node/weak/des_weak.js",
+        "function": "cipher",
+        "line": 13,
+        "snippet": "const cipher = crypto.createCipheriv('des-cbc', key, iv);"
+      },
+      "id": "6e316b46b04e645c30349174c8529614009112421690f1bc22535ec72ac4f43b",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "RSA",
+      "api": "RSA_generate_key_ex",
+      "assetType": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/asymmetric/rsa_2048_strong.c",
+        "function": null,
+        "line": 17,
+        "snippet": "    RSA_generate_key_ex(rsa, 2048, e, NULL);"
+      },
+      "id": "72b35f6b7e69d1015b45a6b6b63067b190a21c11b262bc9b7548e2d09815fffe",
+      "keySizeBits": "2048",
+      "library": "openssl",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "EVP_EncryptInit_ex",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/openssl_crypto.c",
+        "function": null,
+        "line": 5,
+        "snippet": "    EVP_EncryptInit_ex(ctx, EVP_aes_256_ecb(), NULL, NULL, NULL);"
+      },
+      "id": "74a204fcef97cb1dbb8e2ed676f70f580a461b6fd28749c7b8c8b4020af02ada",
+      "keySizeBits": "256",
+      "library": "openssl",
+      "mode": "ECB",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "EVP_EncryptInit_ex",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/symmetric/aes_128_cbc_strong.c",
+        "function": null,
+        "line": 20,
+        "snippet": "    EVP_EncryptInit_ex(ctx, EVP_aes_128_cbc(), NULL, key, iv);"
+      },
+      "id": "85a3d717499eec4ab4893d76bd8502e762a2e7a34b342bf997d275329305f1d8",
+      "keySizeBits": "128",
+      "library": "openssl",
+      "mode": "CBC",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/symmetric/AES128CBCStrong.java",
+        "function": null,
+        "line": 23,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");"
+      },
+      "id": "8652248ff85748694b6d33a570b01e3dd279427cd9acfc5a100e90305aa368a4",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "PKCS5PADDING",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "ALGORITHMS.ARC4(KEY)",
+      "api": "cryptography.hazmat.primitives.ciphers.Cipher",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 10,
+        "file": "/workspace/cryptosamples/python/weak/rc4_weak.py",
+        "function": null,
+        "line": 12,
+        "snippet": "cipher = Cipher(algorithms.ARC4(key), mode=None, backend=default_backend())"
+      },
+      "id": "876b5cf4cbc9ae7261f36b43a86b87e889c84d99b62d9e500e76a1514b3f0ba5",
+      "keySizeBits": "UNKNOWN",
+      "library": "cryptography",
+      "mode": "MODE=NONE",
+      "notes": null
+    },
+    {
+      "algorithm": "UNKNOWN",
+      "api": "crypto/cipher.NewCBCEncrypter",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 10,
+        "file": "/workspace/cryptosamples/go/symmetric/aes_128_cbc_strong.go",
+        "function": "main",
+        "line": 27,
+        "snippet": "\tmode := cipher.NewCBCEncrypter(block, iv)"
+      },
+      "id": "87f7eecf219c7190759c270b2db06031c087a28e1503b7e95ee5af8d82925612",
+      "keySizeBits": "UNKNOWN",
+      "library": "crypto/cipher",
+      "mode": "CBC",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "EVP_aes_256_gcm",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 29,
+        "file": "/workspace/cryptosamples/C/symmetric/aes_256_gcm_strong.c",
+        "function": null,
+        "line": 21,
+        "snippet": "    EVP_EncryptInit_ex(ctx, EVP_aes_256_gcm(), NULL, key, iv);"
+      },
+      "id": "8cca8e52ea23642c32dadc7850f913d001c67e6f7cd3817e6f32f290bd44f6d1",
+      "keySizeBits": "256",
+      "library": "openssl",
+      "mode": "GCM",
+      "notes": null
+    },
+    {
+      "algorithm": "DES/ECB/PKCS5PADDING",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/weak/DESWeak.java",
+        "function": null,
+        "line": 18,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"DES/ECB/PKCS5Padding\");"
+      },
+      "id": "8df67bba01be2b569d79a0ad38d8f5d21448c39157b30c7f1667e6d16405fdcd",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "UNKNOWN",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "RSA",
+      "api": "crypto/rsa.GenerateKey",
+      "assetType": "ASYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 21,
+        "file": "/workspace/cryptosamples/go/asymmetric/rsa_2048_strong.go",
+        "function": "main",
+        "line": 15,
+        "snippet": "\tprivateKey, err := rsa.GenerateKey(rand.Reader, 2048)"
+      },
+      "id": "8e08b2e8f60ac71bc382e8be14fc9cbef139d9598630528a6eff651ae7533cd6",
+      "keySizeBits": "2048",
+      "library": "crypto/rsa",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "SHA-256",
+      "api": "crypto.createHash",
+      "assetType": "HASH",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 14,
+        "file": "/workspace/cryptosamples/node/hash/sha256_strong.js",
+        "function": "hash",
+        "line": 10,
+        "snippet": "const hash = crypto.createHash('sha256');"
+      },
+      "id": "996aa819b6ad6fe01eac239b0d532eb7f0284a271411e7114621d1f2c68e73a7",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/node/symmetric/aes_128_cbc_strong.js",
+        "function": "cipher",
+        "line": 14,
+        "snippet": "const cipher = crypto.createCipheriv('aes-128-cbc', key, iv);"
+      },
+      "id": "a37dcf7cf50dfd08deba7c851bb20661fc018f3cfbf1e4e6ab9904aed0394d3e",
+      "keySizeBits": "128",
+      "library": "node:crypto",
+      "mode": "CBC",
+      "notes": null
+    },
+    {
+      "algorithm": "MD5",
+      "api": "crypto.createHash",
+      "assetType": "HASH",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 14,
+        "file": "/workspace/cryptosamples/node/hash/md5_weak.js",
+        "function": "hash",
+        "line": 10,
+        "snippet": "const hash = crypto.createHash('md5');"
+      },
+      "id": "a80f6a597a2f8cab08b6e57b9673d86cd7bbfccb7bb7b4a73bb65e4dcd087a6f",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/node/symmetric/aes_256_gcm_strong.js",
+        "function": "cipher",
+        "line": 14,
+        "snippet": "const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);"
+      },
+      "id": "b8a153cd9d81860f2ffd316dd99bba1aa39ca455f2ed3da9282cfb021458aebd",
+      "keySizeBits": "256",
+      "library": "node:crypto",
+      "mode": "GCM",
+      "notes": null
+    },
+    {
+      "algorithm": "RC4",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/node/weak/rc4_weak.js",
+        "function": "cipher",
+        "line": 11,
+        "snippet": "const cipher = crypto.createCipheriv('rc4', key, null);"
+      },
+      "id": "bb87245be0212b08bd1512a7fae964df1ab331c4ba648cd3239df14cb00edb44",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "SHA-1",
+      "api": "java.security.MessageDigest.getInstance",
+      "assetType": "HASH",
+      "confidence": "MED",
+      "evidence": {
+        "column": 28,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/hash/SHA1Weak.java",
+        "function": null,
+        "line": 14,
+        "snippet": "        MessageDigest md = MessageDigest.getInstance(\"SHA-1\");"
+      },
+      "id": "bded25c9b3ce4ff5756abaaadf429f6fed7bfbeadb3e57e4b8b10eae57f5ee70",
+      "keySizeBits": "UNKNOWN",
+      "library": "java.security",
+      "mode": "UNKNOWN",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "SHA-256",
+      "api": "java.security.MessageDigest.getInstance",
+      "assetType": "HASH",
+      "confidence": "MED",
+      "evidence": {
+        "column": 28,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/hash/SHA256Strong.java",
+        "function": null,
+        "line": 14,
+        "snippet": "        MessageDigest md = MessageDigest.getInstance(\"SHA-256\");"
+      },
+      "id": "be3cc2e616865334f9faed06c3d53ba18aa1706acac045ae05e8e4af5ea4f3b4",
+      "keySizeBits": "UNKNOWN",
+      "library": "java.security",
+      "mode": "UNKNOWN",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "AES",
+      "api": "EVP_EncryptInit_ex",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 5,
+        "file": "/workspace/cryptosamples/C/symmetric/aes_256_ecb_weak.c",
+        "function": null,
+        "line": 19,
+        "snippet": "    EVP_EncryptInit_ex(ctx, EVP_aes_256_ecb(), NULL, key, NULL);"
+      },
+      "id": "bffa04beb6571ffa29b42c5d85481756e20b0435df7f00a0b1171cad72396a02",
+      "keySizeBits": "256",
+      "library": "openssl",
+      "mode": "ECB",
+      "notes": null
+    },
+    {
+      "algorithm": "SHA-1",
+      "api": "crypto.createHash",
+      "assetType": "HASH",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 14,
+        "file": "/workspace/cryptosamples/node/hash/sha1_weak.js",
+        "function": "hash",
+        "line": 10,
+        "snippet": "const hash = crypto.createHash('sha1');"
+      },
+      "id": "cd041a970f69ed667127b5b2cfb5ed6eda27a98e4bd42ffc6789a3e15ce87b57",
+      "keySizeBits": "UNKNOWN",
+      "library": "node:crypto",
+      "mode": "UNKNOWN",
+      "notes": null
+    },
+    {
+      "algorithm": "AES",
+      "api": "javax.crypto.Cipher.getInstance",
+      "assetType": "SYMMETRIC",
+      "confidence": "MED",
+      "evidence": {
+        "column": 25,
+        "file": "/workspace/cryptosamples/java/src/main/java/com/cbom/symmetric/AES256GCMStrong.java",
+        "function": null,
+        "line": 23,
+        "snippet": "        Cipher cipher = Cipher.getInstance(\"AES/GCM/NoPadding\");"
+      },
+      "id": "d7aa3f505938d00b641c204011ff1b809bda9d014d57f93a33a881ffb334e8fc",
+      "keySizeBits": "UNKNOWN",
+      "library": "javax.crypto",
+      "mode": "NOPADDING",
+      "notes": "heuristic"
+    },
+    {
+      "algorithm": "AES",
+      "api": "crypto.createCipheriv",
+      "assetType": "SYMMETRIC",
+      "confidence": "HIGH",
+      "evidence": {
+        "column": 16,
+        "file": "/workspace/cryptosamples/node/symmetric/aes_256_ecb_weak.js",
+        "function": "cipher",
+        "line": 12,
+        "snippet": "const cipher = crypto.createCipheriv('aes-256-ecb', key, null);"
+      },
+      "id": "f864523273abd8661c445f7418469c0bb65c01897a2e0779c654116ebdeffd9a",
+      "keySizeBits": "256",
+      "library": "node:crypto",
+      "mode": "ECB",
+      "notes": null
+    }
+  ],
+  "generatedAt": "2026-01-12T11:44:29.109108+00:00",
+  "tool": {
+    "name": "cbom-scanner",
+    "version": "0.1.0"
+  }
+}

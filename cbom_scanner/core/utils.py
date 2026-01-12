@@ -66,7 +66,32 @@ def _find_function_context(node: "Node") -> Optional[str]:
         return None
     current = node
     while current is not None:
-        name_node = current.child_by_field_name("name")
+        name_node = None
+        if hasattr(current, "child_by_field_name"):
+            try:
+                name_node = current.child_by_field_name("name")
+            except Exception:
+                name_node = None
+        if name_node is None:
+            field_name_for_child = getattr(current, "field_name_for_child", None)
+            if field_name_for_child is not None:
+                for index, child in enumerate(current.children):
+                    try:
+                        if field_name_for_child(index) == "name":
+                            name_node = child
+                            break
+                    except Exception:
+                        continue
+        if name_node is None:
+            for child in getattr(current, "named_children", []):
+                if child.type in (
+                    "identifier",
+                    "property_identifier",
+                    "field_identifier",
+                    "name",
+                ):
+                    name_node = child
+                    break
         if name_node is not None:
             return name_node.text.decode("utf-8", errors="replace")
         current = current.parent
